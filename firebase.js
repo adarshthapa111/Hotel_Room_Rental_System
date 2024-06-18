@@ -1,3 +1,4 @@
+require('dotenv').config(); // Add this line to load dotenv
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
