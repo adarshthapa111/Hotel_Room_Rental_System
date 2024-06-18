@@ -4,8 +4,9 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { supabase } from "../Supabase/config";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const page = () => {
+const Page = () => {
   const [fetchError, setFetchError] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [ratingsData, setRatingsData] = useState({});
@@ -97,7 +98,7 @@ const page = () => {
           <div className="container mx-auto px-4 md:px-6 ">
             <div className="mb-8 text-center">
               <h2 className="font-great-vibes tracking-wide text-3xl font-bold sm:text-4xl md:text-5xl ">
-                 Explore Our Room Types
+                Explore Our Room Types
               </h2>
               <p className="mt-4 text-gray-500 md:text-xl">
                 Find the perfect room for your stay.
@@ -133,7 +134,7 @@ const page = () => {
                         },
                       }}
                     >
-                      <img
+                      <Image
                         alt="Standard Room"
                         className="h-64 w-full object-cover rounded-t-lg"
                         height={400}
@@ -145,7 +146,9 @@ const page = () => {
                         width={600}
                       />
                       <div className="bg-white dark:bg-gray-950 pt-2">
-                        <h3 className="text-xl font-bold">{booking.HotelName}</h3>
+                        <h3 className="text-xl font-bold">
+                          {booking.HotelName}
+                        </h3>
                         <p
                           className="text-gray-500"
                           style={{
@@ -185,7 +188,8 @@ const page = () => {
                             ))}
                           </div>
                           <span className="text-gray-500 dark:text-gray-400">
-                            {averageRating.toFixed(1)} ({ratings.length} reviews)
+                            {averageRating.toFixed(1)} ({ratings.length}{" "}
+                            reviews)
                           </span>
                         </div>
                       </div>
@@ -242,4 +246,4 @@ function StarIcon(props) {
   );
 }
 
-export default page;
+export default Page;

@@ -1,5 +1,6 @@
-// Load environment variables
+// At the top of your file (e.g., firebase.js or index.js)
 require('dotenv').config();
+
 
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";

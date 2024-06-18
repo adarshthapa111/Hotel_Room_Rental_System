@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const page = () => {
+const Page = () => {
   const { user: currentUser } = UserAuth();
   const [userData, setUserData] = useState(null);
   const router = useRouter();
@@ -118,7 +118,11 @@ const page = () => {
             <div className="container px-4 md:px-6  mx-auto max-w-7xl">
               <div className="max-w-2xl mx-auto text-center space-y-4">
                 <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl font-great-vibes">
-                  Welcome,  <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text">{userData.firstName} {userData.lastName}</span> !
+                  Welcome,{" "}
+                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text">
+                    {userData.firstName} {userData.lastName}
+                  </span>{" "}
+                  !
                 </h1>
                 <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl">
                   Explore your profile and manage your account settings.
@@ -131,20 +135,24 @@ const page = () => {
               <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md">
                 <div className="p-6">
                   <h3 className="text-lg font-semibold">First Name</h3>
-                  <p className="text-gray-500 dark:text-gray-400 mt-2">{userData.firstName}</p>
+                  <p className="text-gray-500 dark:text-gray-400 mt-2">
+                    {userData.firstName}
+                  </p>
                 </div>
               </div>
               <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md">
                 <div className="p-6">
                   <h3 className="text-lg font-semibold">Last Name</h3>
-                  <p className="text-gray-500 dark:text-gray-400 mt-2">{userData.lastName}</p>
+                  <p className="text-gray-500 dark:text-gray-400 mt-2">
+                    {userData.lastName}
+                  </p>
                 </div>
               </div>
               <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md">
                 <div className="p-6">
                   <h3 className="text-lg font-semibold">Email</h3>
                   <p className="text-gray-500 dark:text-gray-400 mt-2">
-                  {userData.email}
+                    {userData.email}
                   </p>
                 </div>
               </div>
@@ -156,4 +164,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

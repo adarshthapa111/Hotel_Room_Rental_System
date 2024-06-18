@@ -4,16 +4,20 @@ import Link from "next/link";
 import { supabase } from "../Supabase/config";
 import { motion } from "framer-motion";
 import { UserAuth } from "../context/AuthContext";
+import Image from "next/image";
 
-const page = () => {
+const Page = () => {
   const [fetchError, setFetchError] = useState();
   const [bookings, setBookings] = useState();
-  const {user:currentUser} = UserAuth();
-  
+  const { user: currentUser } = UserAuth();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data, error } = await supabase.from("Favourites").select("*").eq("UserId", currentUser.uid);
+        const { data, error } = await supabase
+          .from("Favourites")
+          .select("*")
+          .eq("UserId", currentUser.uid);
         if (error) {
           setBookings(null);
           setFetchError("Couldn't fetch the data!");
@@ -32,7 +36,6 @@ const page = () => {
     fetchData(); // Call fetchData function inside useEffect
   }, []);
 
-
   return (
     <>
       <motion.div
@@ -45,7 +48,9 @@ const page = () => {
         {bookings && (
           <div className="container mx-auto px-4 md:px-6 ">
             <div className="mb-8 text-center">
-            <h1 className="md:text-4xl xl:text-7xl text-center font-bold p-4 bg-gradient-to-r from-blue-500  to-purple-600 text-transparent bg-clip-text font-great-vibes">♠︎ Favourites ♠︎ </h1>
+              <h1 className="md:text-4xl xl:text-7xl text-center font-bold p-4 bg-gradient-to-r from-blue-500  to-purple-600 text-transparent bg-clip-text font-great-vibes">
+                ♠︎ Favourites ♠︎{" "}
+              </h1>
             </div>
 
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
@@ -55,59 +60,59 @@ const page = () => {
                   key={booking.id}
                 >
                   {console.log(booking.id)}
-                    <img
-                      alt="Standard Room"
-                      className="h-64 w-full object-cover rounded-t-lg"
-                      height={400}
-                      src={booking.ImageUrl}
+                  <Image
+                    alt="Standard Room"
+                    className="h-64 w-full object-cover rounded-t-lg"
+                    height={400}
+                    src={booking.ImageUrl}
+                    style={{
+                      aspectRatio: "600/400",
+                      objectFit: "cover",
+                    }}
+                    width={600}
+                  />
+                  <div className="bg-white dark:bg-gray-950 pt-2">
+                    {console.log(booking.ImageUrl)}
+                    <h3 className="text-xl font-bold">{booking.HotelName}</h3>
+                    {console.log(booking.HotelName)}
+                    <p
+                      className="text-gray-500"
                       style={{
-                        aspectRatio: "600/400",
-                        objectFit: "cover",
+                        maxHeight: "2.8em",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        display: "-webkit-box",
+                        WebkitLineClamp: "2",
+                        WebkitBoxOrient: "vertical",
                       }}
-                      width={600}
-                    />
-                    <div className="bg-white dark:bg-gray-950 pt-2">
-                      {console.log(booking.ImageUrl)}
-                      <h3 className="text-xl font-bold">{booking.HotelName}</h3>
-                      {console.log(booking.HotelName)}
-                      <p
-                        className="text-gray-500"
-                        style={{
-                          maxHeight: "2.8em",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          display: "-webkit-box",
-                          WebkitLineClamp: "2",
-                          WebkitBoxOrient: "vertical",
-                        }}
-                      >
-                        {booking.Description}
-                      </p>
-                      <div className="mt-4 flex items-center justify-between">
-                        <span className="text-lg font-semibold">
-                          Rs.{booking.price}/night
-                        </span>
-                        <span className="text-lg font-semibold">
-                          {booking.Location}
-                        </span>
-                      </div>
-                      <div className="border-b border-gray-400 dark:border-gray-700 my-4" />
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-1">
-                          <StarIcon className="w-5 h-5 fill-yellow-500" />
-                          <StarIcon className="w-5 h-5 fill-yellow-500" />
-                          <StarIcon className="w-5 h-5 fill-yellow-500" />
-                          <StarIcon className="w-5 h-5 fill-gray-300 dark:fill-gray-600" />
-                          <StarIcon className="w-5 h-5 fill-gray-300 dark:fill-gray-600" />
-                        </div>
-                        <button
-                          className="rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/80 focus:outline-none"
-                          href="#"
-                        >
-                          Delete
-                        </button>
-                      </div>
+                    >
+                      {booking.Description}
+                    </p>
+                    <div className="mt-4 flex items-center justify-between">
+                      <span className="text-lg font-semibold">
+                        Rs.{booking.price}/night
+                      </span>
+                      <span className="text-lg font-semibold">
+                        {booking.Location}
+                      </span>
                     </div>
+                    <div className="border-b border-gray-400 dark:border-gray-700 my-4" />
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1">
+                        <StarIcon className="w-5 h-5 fill-yellow-500" />
+                        <StarIcon className="w-5 h-5 fill-yellow-500" />
+                        <StarIcon className="w-5 h-5 fill-yellow-500" />
+                        <StarIcon className="w-5 h-5 fill-gray-300 dark:fill-gray-600" />
+                        <StarIcon className="w-5 h-5 fill-gray-300 dark:fill-gray-600" />
+                      </div>
+                      <button
+                        className="rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/80 focus:outline-none"
+                        href="#"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -137,4 +142,4 @@ function StarIcon(props) {
   );
 }
 
-export default page;
+export default Page;

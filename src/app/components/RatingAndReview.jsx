@@ -337,10 +337,12 @@ const page = ({ hotelId }) => {
                     {currentItems.map((review) => (
                       <div className="flex items-start gap-4" key={review.id}>
                         <div className=" rounded-full">
-                          <img
-                            src="/img/icon.png"
+                          <Image
+                            src="/Image/icon.png"
                             alt="@username"
                             className="h-12 w-12"
+                            height={40}
+                            width={40}
                           />
                         </div>
                         <div className="grid gap-2">

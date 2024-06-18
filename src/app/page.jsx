@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Home = () => {
   return (
@@ -100,28 +101,17 @@ const Home = () => {
               </form> */}
               </div>
               <div className="hidden md:block">
-                <img
+                <Image
                   alt="Hotel Room"
                   className="rounded-l-full rounded-r-4xl shadow-gray-400"
                   height={400}
-                  src="/img/99.jpg"
+                  src="/Image/99.jpg"
                   style={{
                     aspectRatio: "350/350",
                     objectFit: "cover",
                   }}
                   width={600}
                 />
-                {/* <img
-                alt="Hotel Room"
-                className="shadow-inner absolute top-1/4 left-0 h-[400px] w-[400px] shadow-gray-400 rounded-full"
-                height={400}
-                src="/img/99.jpg"
-                style={{
-                  aspectRatio: "600/400",
-                  objectFit: "cover",
-                }}
-                width={600}
-              />  */}
               </div>
             </div>
           </div>
@@ -140,11 +130,11 @@ const Home = () => {
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                   <Link className="block" href="#">
-                    <img
+                    <Image
                       alt="Standard Room"
                       className="h-64 w-full object-cover"
                       height={400}
-                      src="/img/standerd_room.jpg"
+                      src="/Image/standerd_room.jpg"
                       style={{
                         aspectRatio: "600/400",
                         objectFit: "cover",
@@ -170,11 +160,11 @@ const Home = () => {
                 </div>
                 <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                   <Link className="block" href="#">
-                    <img
+                    <Image
                       alt="Deluxe Room"
                       className="h-64 w-full object-cover"
                       height={400}
-                      src="/img/deluxe_room.jpg"
+                      src="/Image/deluxe_room.jpg"
                       style={{
                         aspectRatio: "600/400",
                         objectFit: "cover",
@@ -202,11 +192,11 @@ const Home = () => {
                 </div>
                 <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                   <Link className="block" href="#">
-                    <img
+                    <Image
                       alt="Suite"
                       className="h-64 w-full object-cover"
                       height={400}
-                      src="/img/suite_room.jpg"
+                      src="/Image/suite_room.jpg"
                       style={{
                         aspectRatio: "600/400",
                         objectFit: "cover",

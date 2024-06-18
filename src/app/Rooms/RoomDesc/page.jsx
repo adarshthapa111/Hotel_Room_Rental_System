@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 import { supabase } from "../../Supabase/config";
 import { UserAuth } from "../../context/AuthContext";
 import Swal from "sweetalert2";
-import RatingAndReview from "../../components/RatingAndReview"
+import RatingAndReview from "../../components/RatingAndReview";
 
-const page = () => {
+const Page = () => {
   const params = useSearchParams();
 
   const [imageUrl, setImageUrl] = useState("");
@@ -137,7 +137,7 @@ const page = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="relative">
-          <img
+          <Image
             alt="Hotel Image"
             className="w-full h-full object-cover rounded-lg"
             height={400}
@@ -228,7 +228,7 @@ const page = () => {
           </div>
         </div>
       </motion.div>
-      <RatingAndReview hotelId = {hotelId}/>
+      <RatingAndReview hotelId={hotelId} />
     </>
   );
 };
@@ -253,5 +253,4 @@ function StarIcon({ className, ...props }) {
   );
 }
 
-
-export default page;
+export default Page;

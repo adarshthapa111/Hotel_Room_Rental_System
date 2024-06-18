@@ -1,13 +1,13 @@
-"use client"
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 
-export default function page() {
+export default function Page() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    checkIn: '',
-    checkOut: '',
-    roomType: 'Single',
+    name: "",
+    email: "",
+    checkIn: "",
+    checkOut: "",
+    roomType: "Single",
   });
 
   const handleChange = (e) => {
@@ -26,7 +26,10 @@ export default function page() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-4xl font-bold mb-4">Book Your Stay</h1>
-      <form onSubmit={handleSubmit} className="bg-white p-8 rounded shadow-md w-full max-w-lg">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white p-8 rounded shadow-md w-full max-w-lg"
+      >
         <div className="mb-4">
           <label className="block text-gray-700">Name</label>
           <input
@@ -84,7 +87,10 @@ export default function page() {
             <option value="Suite">Suite</option>
           </select>
         </div>
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
           Submit
         </button>
       </form>

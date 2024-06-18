@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { auth, db } from "../../../firebase";
 import { toast } from "react-toastify";
+import Image from "next/image";
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -64,13 +65,6 @@ const Page = () => {
         transition={{ duration: 0.6 }}
       >
         <div className="sm:mx-auto sm:w-full sm:max-w-sm font-great-vibes">
-          {/* <Link href="/">
-          <img
-            className="mx-auto h-24 w-auto"
-            src="/img/logo1.png"
-            alt="Khana Aau"
-          />
-        </Link> */}
           <Link href="/">
             <li className="flex-shrink-0 text-3xl text-center font-bold font-great-vibes bg-gradient-to-r from-purple-600 to-blue-600 text-transparent bg-clip-text">
               Book my Room
@@ -178,7 +172,13 @@ const Page = () => {
                   className="flex flex-1 border border-gray-400 space-x-2 py-2 px-4 rounded-xl items-center justify-center w-full "
                   onClick={handleGoogleSignIn}
                 >
-                  <img src="/img/google.png" alt="" className="h-8 w-8" />
+                  <Image
+                    src="/Image/google.png"
+                    alt="Google image"
+                    className="h-8 w-8"
+                    height={80} // Required property
+                    width={40} // Required property
+                  />
                   <span>Sign in with Google</span>
                 </button>
               </div>

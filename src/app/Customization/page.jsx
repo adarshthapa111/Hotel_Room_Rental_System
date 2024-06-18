@@ -5,7 +5,7 @@
 // import { motion } from "framer-motion";
 // import Link from "next/link";
 // import Swal from "sweetalert2";
-// const page = () => {
+// const Page = () => {
 //   const [customizations, setCustomizations] = useState();
 //   const [fetchError, setFetchError] = useState();
 //   const [editMode, setEditMode] = useState();
@@ -128,7 +128,7 @@
 //                       },
 //                     }}
 //                   >
-//                     <img
+//                     <Image
 //                       alt="Standard Room"
 //                       className="h-64 w-full object-cover rounded-t-lg"
 //                       height={400}
@@ -164,10 +164,10 @@
 //                       </span>
 //                       <div className="flex space-x-6 ">
 //                         <div onClick={()=>handleEdit(booking.id)}>
-//                           <img src="/img/iEdit.png" alt="" className="h-8 cursor-pointer" />
+//                           <Image src="/Image/iEdit.png" alt="" className="h-8 cursor-pointer" />
 //                         </div>
 //                         <div onClick={() => handleDelete(booking.id)}>
-//                           <img src="/img/iDelete.png" alt="" className="h-8 cursor-pointer" />
+//                           <Image src="/Image/iDelete.png" alt="" className="h-8 cursor-pointer" />
 //                         </div>
 //                       </div>
 //                     </div>
@@ -214,7 +214,7 @@
 //   );
 // }
 
-// export default page;
+// export default Page;
 
 "use client";
 import { useEffect, useState } from "react";
@@ -224,7 +224,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Swal from "sweetalert2";
 
-const page = () => {
+const Page = () => {
   const [customizations, setCustomizations] = useState([]);
   const [fetchError, setFetchError] = useState();
   const { user: currentUser } = UserAuth();
@@ -274,15 +274,25 @@ const page = () => {
 
         if (error) {
           console.log(error, "Error Deleting!!!!!");
-          Swal.fire("Error!", "There was a problem deleting the booking.", "error");
+          Swal.fire(
+            "Error!",
+            "There was a problem deleting the booking.",
+            "error"
+          );
           return;
         }
 
-        setCustomizations(customizations.filter((booking) => booking.id !== id));
+        setCustomizations(
+          customizations.filter((booking) => booking.id !== id)
+        );
         Swal.fire("Deleted!", "Your booking has been deleted.", "success");
       } catch (error) {
         console.log(error, "Error Deleting!!!!!!!!!!");
-        Swal.fire("Error!", "There was a problem deleting the booking.", "error");
+        Swal.fire(
+          "Error!",
+          "There was a problem deleting the booking.",
+          "error"
+        );
       }
     }
   };
@@ -295,7 +305,21 @@ const page = () => {
   const handleEditSubmit = async (event) => {
     event.preventDefault();
 
-    const { id, ImageUrl, HotelName, Description, Price, City, NumberOfRooms, ParkingAvailable, CheckIn, CheckOut, RoomType, RoomService, Beds } = editBooking;
+    const {
+      id,
+      ImageUrl,
+      HotelName,
+      Description,
+      Price,
+      City,
+      NumberOfRooms,
+      ParkingAvailable,
+      CheckIn,
+      CheckOut,
+      RoomType,
+      RoomService,
+      Beds,
+    } = editBooking;
 
     try {
       const { error } = await supabase
@@ -312,17 +336,25 @@ const page = () => {
           CheckOut,
           RoomType,
           RoomService,
-          Beds
+          Beds,
         })
         .eq("id", id);
 
       if (error) {
         console.log(error, "Error updating data");
-        Swal.fire("Error!", "There was a problem updating the booking.", "error");
+        Swal.fire(
+          "Error!",
+          "There was a problem updating the booking.",
+          "error"
+        );
         return;
       }
 
-      setCustomizations(customizations.map((booking) => (booking.id === id ? editBooking : booking)));
+      setCustomizations(
+        customizations.map((booking) =>
+          booking.id === id ? editBooking : booking
+        )
+      );
       setEditMode(false);
       setEditBooking(null);
       Swal.fire("Updated!", "Your booking has been updated.", "success");
@@ -358,7 +390,10 @@ const page = () => {
             </div>
 
             {editMode ? (
-              <form onSubmit={handleEditSubmit} className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+              <form
+                onSubmit={handleEditSubmit}
+                className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg"
+              >
                 <h3 className="text-xl font-bold mb-4">Edit Booking</h3>
                 <div className="grid gap-4">
                   <input
@@ -449,7 +484,10 @@ const page = () => {
                     className="w-full p-2 border border-gray-300 rounded"
                     placeholder="Number of Beds"
                   />
-                  <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+                  <button
+                    type="submit"
+                    className="bg-blue-500 text-white px-4 py-2 rounded"
+                  >
                     Save Changes
                   </button>
                 </div>
@@ -481,7 +519,7 @@ const page = () => {
                         },
                       }}
                     >
-                      <img
+                      <Image
                         alt="Standard Room"
                         className="h-64 w-full object-cover rounded-t-lg"
                         height={400}
@@ -512,10 +550,18 @@ const page = () => {
                         </span>
                         <div className="flex space-x-6 ">
                           <div onClick={() => handleEdit(booking)}>
-                            <img src="/img/iEdit.png" alt="" className="h-8 cursor-pointer" />
+                            <Image
+                              src="/Image/iEdit.png"
+                              alt=""
+                              className="h-8 cursor-pointer"
+                            />
                           </div>
                           <div onClick={() => handleDelete(booking.id)}>
-                            <img src="/img/iDelete.png" alt="" className="h-8 cursor-pointer" />
+                            <Image
+                              src="/Image/iDelete.png"
+                              alt=""
+                              className="h-8 cursor-pointer"
+                            />
                           </div>
                         </div>
                       </div>
@@ -563,5 +609,4 @@ function StarIcon(props) {
   );
 }
 
-export default page;
-
+export default Page;

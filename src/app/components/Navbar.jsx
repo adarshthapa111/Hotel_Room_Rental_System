@@ -6,6 +6,7 @@ import { UserAuth } from "../context/AuthContext";
 import ProfileDropdown from "../components/ProfileDropdown";
 import { usePathname } from "next/navigation";
 import { disableNavAndFoot } from "./DisableNavAndFoot";
+import Image from "next/image";
 
 const Navbar = () => {
   const { user } = UserAuth();
@@ -83,14 +84,19 @@ const Navbar = () => {
                         onClick={toggleDropdown}
                         className="cursor-pointer flex items-center space-x-2"
                       >
-                        <img
-                          src="/img/pp.png"
+                        <Image
+                          src="/Image/pp.png"
                           alt="Profile"
                           className="h-8 w-8 rounded-full"
+                          height={40}
+                          width={40}
                         />
                       </div>
                       {showDropdown && (
-                        <ProfileDropdown  setShowDropdown={setShowDropdown} toggleDropdown={toggleDropdown}/>
+                        <ProfileDropdown
+                          setShowDropdown={setShowDropdown}
+                          toggleDropdown={toggleDropdown}
+                        />
                       )}
                     </div>
                   )}

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { UserAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
 
-const page = () => {
+const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -45,9 +45,9 @@ const page = () => {
     >
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         {/* <Link href="/">
-          <img
+          <Image
             className="mx-auto h-24 w-auto"
-            src="/img/logo1.png"
+            src="/Image/logo1.png"
             alt="Your Company"
           />
         </Link> */}
@@ -215,4 +215,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

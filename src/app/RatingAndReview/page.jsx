@@ -5,27 +5,29 @@ import { supabase } from "../Supabase/config";
 import { toast } from "react-toastify";
 import { db } from "../../../firebase";
 import { UserAuth } from "../context/AuthContext";
-import { ref, get} from "firebase/database";
-const page = () => {
+import { ref, get } from "firebase/database";
+import Image from "next/image";
+
+const Page = () => {
   //Use state management
   const [rating, setRating] = useState("");
   const [title, setTitle] = useState("");
   const [review, setReview] = useState("");
   const [currentPage, setCurrentPage] = useState("");
-  const { user:currentUser } = UserAuth();
+  const { user: currentUser } = UserAuth();
   //On Submit data...
   const handleSubmit = async (event) => {
     event.preventDefault();
     let firstName, lastName;
-    
-    try{
-        const userInfo = ref(db, `users/${currentUser.uid}`);
-        const userSnapshot = await get(userInfo);
-        const userData = userSnapshot.val();
-        firstName = userData.firstName;
-        lastName = userData.lastName;
-    }catch{
-        console.log("Error Fetching firstname and last name!!!")
+
+    try {
+      const userInfo = ref(db, `users/${currentUser.uid}`);
+      const userSnapshot = await get(userInfo);
+      const userData = userSnapshot.val();
+      firstName = userData.firstName;
+      lastName = userData.lastName;
+    } catch {
+      console.log("Error Fetching firstname and last name!!!");
     }
     const { data, error } = await supabase.from("RatingAndReview").insert([
       {
@@ -287,7 +289,7 @@ const page = () => {
                 <div className="grid gap-4">
                   <div className="flex items-start gap-4">
                     <div className="relative w-12 h-12 overflow-hidden bg-gray-200 rounded-full border">
-                      <img
+                      <Image
                         src="/placeholder.svg"
                         alt="@username"
                         className="w-full  h-10"
@@ -389,4 +391,4 @@ function StarIcon(props) {
   );
 }
 
-export default page;
+export default Page;

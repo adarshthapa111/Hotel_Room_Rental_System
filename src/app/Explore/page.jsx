@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const page = () => {
-
+const Page = () => {
   return (
     <>
       <motion.div
@@ -28,11 +28,11 @@ const page = () => {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                 <Link className="block" href="StanderdRooms">
-                  <img
+                  <Image
                     alt="Standard Room"
                     className="h-64 w-full object-cover"
                     height={400}
-                    src="/img/standerd_room.jpg"
+                    src="/Image/standerd_room.jpg"
                     style={{
                       aspectRatio: "600/400",
                       objectFit: "cover",
@@ -60,11 +60,11 @@ const page = () => {
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                 <Link className="block" href="/DeluxeRooms">
-                  <img
+                  <Image
                     alt="Deluxe Room"
                     className="h-64 w-full object-cover"
                     height={400}
-                    src="/img/deluxe_room.jpg"
+                    src="/Image/deluxe_room.jpg"
                     style={{
                       aspectRatio: "600/400",
                       objectFit: "cover",
@@ -92,11 +92,11 @@ const page = () => {
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                 <Link className="block" href="SuiteRooms">
-                  <img
+                  <Image
                     alt="Suite"
                     className="h-64 w-full object-cover"
                     height={400}
-                    src="/img/suite_room.jpg"
+                    src="/Image/suite_room.jpg"
                     style={{
                       aspectRatio: "600/400",
                       objectFit: "cover",
@@ -131,11 +131,11 @@ const page = () => {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                 <Link className="block" href="#">
-                  <img
+                  <Image
                     alt="Standard Room"
                     className="h-64 w-full object-cover"
                     height={400}
-                    src="/img/standerd_room.jpg"
+                    src="/Image/standerd_room.jpg"
                     style={{
                       aspectRatio: "600/400",
                       objectFit: "cover",
@@ -161,11 +161,11 @@ const page = () => {
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                 <Link className="block" href="#">
-                  <img
+                  <Image
                     alt="Deluxe Room"
                     className="h-64 w-full object-cover"
                     height={400}
-                    src="/img/deluxe_room.jpg"
+                    src="/Image/deluxe_room.jpg"
                     style={{
                       aspectRatio: "600/400",
                       objectFit: "cover",
@@ -191,11 +191,11 @@ const page = () => {
               </div>
               <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
                 <Link className="block" href="#">
-                  <img
+                  <Image
                     alt="Suite"
                     className="h-64 w-full object-cover"
                     height={400}
-                    src="/img/suite_room.jpg"
+                    src="/Image/suite_room.jpg"
                     style={{
                       aspectRatio: "600/400",
                       objectFit: "cover",
@@ -227,4 +227,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
