@@ -1,16 +1,21 @@
+// Load environment variables
+require('dotenv').config();
+
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 import { getDatabase } from "firebase/database";
 import { getFirestore } from "firebase/firestore";
 
+
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCRuOCuA4AMOD3YQD0EN0OAa5qp789-nw8",
-  authDomain: "ecommerce-a474e.firebaseapp.com",
-  projectId: "ecommerce-a474e",
-  storageBucket: "ecommerce-a474e.appspot.com",
-  messagingSenderId: "662095106993",
-  appId: "1:662095106993:web:8fba9cbdb4b4e6ee926390"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
