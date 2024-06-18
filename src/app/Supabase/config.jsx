@@ -1,5 +1,3 @@
-// At the top of your file (e.g., firebase.js or index.js)
-require('dotenv').config();
 
   
 import { createClient } from '@supabase/supabase-js';
