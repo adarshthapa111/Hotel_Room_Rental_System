@@ -400,7 +400,7 @@ import { UserAuth } from "../context/AuthContext";
 import { supabase } from "../Supabase/config";
 import Image from "next/image";
 
-const RatingAndReview = () => {
+const Page = () => {
   const [rating, setRating] = useState("");
   const [title, setTitle] = useState("");
   const [review, setReview] = useState("");
@@ -601,4 +601,4 @@ function StarIcon(props) {
   );
 }
 
-export default RatingAndReview;
+export default Page;

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { supabase } from "../../Supabase/config";
 import { UserAuth } from "../../context/AuthContext";
 import Swal from "sweetalert2";
-import RatingAndReview from "../../components/RatingAndReview";
+import RatingAndReview from "../../components/RatingAndReview"
 import Image from "next/image";
 
 const Page = () => {

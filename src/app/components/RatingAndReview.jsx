@@ -9,7 +9,7 @@ import { ref, get } from "firebase/database";
 import StarRating from "../components/StarRating";
 import Image from "next/image";
 
-const page = ({ hotelId }) => {
+const RatingAndReview = ({ hotelId }) => {
   //Use state management
   const [rating, setRating] = useState("5");
   const [title, setTitle] = useState("");
@@ -457,4 +457,4 @@ function StarIcon(props) {
   );
 }
 
-export default page;
+export default RatingAndReview;
