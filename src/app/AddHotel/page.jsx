@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { supabase } from "../Supabase/config";
 import { motion } from "framer-motion";
 import { UserAuth } from "../context/AuthContext";
+
 const Page = () => {
   
   const [hotelName, setHotelName] = useState("");

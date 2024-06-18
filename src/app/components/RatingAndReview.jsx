@@ -7,6 +7,7 @@ import { db } from "../../../firebase";
 import { UserAuth } from "../context/AuthContext";
 import { ref, get } from "firebase/database";
 import StarRating from "../components/StarRating";
+import Image from "next/image";
 
 const page = ({ hotelId }) => {
   //Use state management

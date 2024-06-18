@@ -7,10 +7,11 @@ import { supabase } from "../../Supabase/config";
 import { UserAuth } from "../../context/AuthContext";
 import Swal from "sweetalert2";
 import RatingAndReview from "../../components/RatingAndReview";
+import Image from "next/image";
 
 const Page = () => {
-  const params = useSearchParams();
 
+  const params = useSearchParams();
   const [imageUrl, setImageUrl] = useState("");
   const [NumberOfRooms, setNoOfRooms] = useState("");
   const [hotelName, setHotelName] = useState("");

@@ -223,6 +223,7 @@ import { UserAuth } from "../context/AuthContext";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Swal from "sweetalert2";
+import Image from "next/image";
 
 const Page = () => {
   const [customizations, setCustomizations] = useState([]);
