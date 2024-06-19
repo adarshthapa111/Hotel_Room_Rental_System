@@ -1,5 +1,5 @@
-const Page = () => {
+const Setting = () => {
   return <div></div>;
 };
 
-export default Page;
+export default Setting

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export default function Page() {
+export default function BookNow() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",

@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { UserAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
 
-const Page = () => {
+const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -215,4 +215,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Signup

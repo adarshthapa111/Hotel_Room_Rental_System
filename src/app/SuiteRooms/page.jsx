@@ -6,7 +6,7 @@ import { supabase } from "../Supabase/config";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const Page = () => {
+const SuiteRooms = () => {
   const [fetchError, setFetchError] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [ratingsData, setRatingsData] = useState({});
@@ -248,4 +248,4 @@ function StarIcon(props) {
   );
 }
 
-export default Page;
+export default SuiteRooms

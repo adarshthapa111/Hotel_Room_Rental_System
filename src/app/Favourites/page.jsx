@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { UserAuth } from "../context/AuthContext";
 import Image from "next/image";
 
-const Page = () => {
+const Favourites = () => {
   const [fetchError, setFetchError] = useState();
   const [bookings, setBookings] = useState();
   const { user: currentUser } = UserAuth();
@@ -142,4 +142,4 @@ function StarIcon(props) {
   );
 }
 
-export default Page;
+export default Favourites

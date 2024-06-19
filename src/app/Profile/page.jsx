@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Page = () => {
+const Profile = () => {
   const { user: currentUser } = UserAuth();
   const [userData, setUserData] = useState(null);
   const router = useRouter();
@@ -164,4 +164,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Profile;

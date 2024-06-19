@@ -4,7 +4,7 @@ import { supabase } from "../Supabase/config";
 import { motion } from "framer-motion";
 import { UserAuth } from "../context/AuthContext";
 
-const Page = () => {
+const AddHotel = () => {
   
   const [hotelName, setHotelName] = useState("");
   const [description, setDescription] = useState("");
@@ -350,4 +350,4 @@ function UploadIcon(props) {
     </svg>
   );
 }
-export default Page;
+export default AddHotel

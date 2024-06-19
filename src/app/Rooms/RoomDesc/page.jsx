@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 import RatingAndReview from "../../components/RatingAndReview"
 import Image from "next/image";
 
-const Page = () => {
+const RoomDesc = () => {
 
   const params = useSearchParams();
   const [imageUrl, setImageUrl] = useState("");
@@ -254,4 +254,4 @@ function StarIcon({ className, ...props }) {
   );
 }
 
-export default Page;
+export default RoomDesc;

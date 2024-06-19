@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const Page = () => {
+const Explore = () => {
   return (
     <>
       <motion.div
@@ -227,4 +227,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Explore;

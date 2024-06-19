@@ -1,6 +1,6 @@
 import React from "react";
 
-const Page = () => {
+const AccountSettings = () => {
   return (
     <div>
       <div className="w-full max-w-2xl mx-auto py-12 md:py-16 min-h-screen">
@@ -71,4 +71,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default AccountSettings;

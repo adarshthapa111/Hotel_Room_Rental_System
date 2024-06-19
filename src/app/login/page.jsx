@@ -10,7 +10,7 @@ import { auth, db } from "../../../firebase";
 import { toast } from "react-toastify";
 import Image from "next/image";
 
-const Page = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -198,4 +198,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Login

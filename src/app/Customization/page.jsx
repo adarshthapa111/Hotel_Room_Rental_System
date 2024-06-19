@@ -225,7 +225,7 @@ import Link from "next/link";
 import Swal from "sweetalert2";
 import Image from "next/image";
 
-const Page = () => {
+const Customization = () => {
   const [customizations, setCustomizations] = useState([]);
   const [fetchError, setFetchError] = useState();
   const { user: currentUser } = UserAuth();
@@ -555,6 +555,8 @@ const Page = () => {
                               src="/Image/iEdit.png"
                               alt=""
                               className="h-8 cursor-pointer"
+                              height={30}
+                              width={30}
                             />
                           </div>
                           <div onClick={() => handleDelete(booking.id)}>
@@ -562,6 +564,8 @@ const Page = () => {
                               src="/Image/iDelete.png"
                               alt=""
                               className="h-8 cursor-pointer"
+                              height={30}
+                              width={30}
                             />
                           </div>
                         </div>
@@ -610,4 +614,4 @@ function StarIcon(props) {
   );
 }
 
-export default Page;
+export default Customization
