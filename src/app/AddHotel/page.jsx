@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { UserAuth } from "../context/AuthContext";
 
 const AddHotel = () => {
-  
   const [hotelName, setHotelName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -19,15 +18,12 @@ const AddHotel = () => {
   const [checkInTime, setCheckInTime] = useState("");
   const [checkOutTime, setCheckOutTime] = useState("");
 
-  const { user:currentUser } = UserAuth();
-  // {console.log(currentUser.uid)}
-  // const userId = currentUser.uid;
-  if(currentUser){
-    console.log(currentUser.uid)
-  }else{
-    console.log("user is not logged in ")
+  const { user: currentUser } = UserAuth();
+  if (currentUser) {
+    console.log(currentUser.uid);
+  } else {
+    console.log("user is not logged in ");
   }
-
 
   const handleImageChange = (e) => {
     setImage(e.target.files[0]);
@@ -64,7 +60,7 @@ const AddHotel = () => {
           RoomService: roomService,
           CheckIn: checkInTime,
           CheckOut: checkOutTime,
-          UserId: currentUser.uid
+          UserId: currentUser.uid,
         },
       ]);
 
@@ -108,9 +104,7 @@ const AddHotel = () => {
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.8 }}
     >
-        
       <section className="w-full py-12 md:py-24 lg:py-14 bg-gray-50">
-
         <div className="container max-w-7xl mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-4xl space-y-6 bg-white p-8 rounded-lg shadow-lg">
             <div className="text-center">
@@ -134,6 +128,7 @@ const AddHotel = () => {
                     className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-400"
                     value={hotelName}
                     onChange={(e) => setHotelName(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -147,6 +142,7 @@ const AddHotel = () => {
                     className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-400"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
+                    required
                   />
                 </div>
               </div>
@@ -162,6 +158,7 @@ const AddHotel = () => {
                     className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-400"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -175,6 +172,7 @@ const AddHotel = () => {
                     onChange={(e) => setRooms(e.target.value)}
                     placeholder="Enter number of rooms"
                     className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-400"
+                    required
                   />
                 </div>
               </div>
@@ -189,6 +187,7 @@ const AddHotel = () => {
                       className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-400"
                       value={roomType}
                       onChange={(e) => setRoomType(e.target.value)}
+                      required
                     >
                       <option value="" disabled>
                         Select room type
@@ -210,6 +209,7 @@ const AddHotel = () => {
                     value={numberOfBeds}
                     onChange={(e) => setNumberOfBeds(e.target.value)}
                     className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-400"
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -222,6 +222,7 @@ const AddHotel = () => {
                       className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-400"
                       value={parkingAvailable}
                       onChange={(e) => setParkingAvailable(e.target.value)}
+                      required
                     >
                       <option value="" disabled>
                         Select parking availability
@@ -243,6 +244,7 @@ const AddHotel = () => {
                       className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-400"
                       value={roomService}
                       onChange={(e) => setRoomService(e.target.value)}
+                      required
                     >
                       <option value="" disabled>
                         Select room service availability
@@ -263,6 +265,7 @@ const AddHotel = () => {
                     value={checkInTime}
                     min={todayDate}
                     onChange={(e) => setCheckInTime(e.target.value)}
+                    required
                   />
                 </div>
                 <div className="grid gap-2">
@@ -276,6 +279,7 @@ const AddHotel = () => {
                     value={checkOutTime}
                     min={checkInTime || todayDate}
                     onChange={(e) => setCheckOutTime(e.target.value)}
+                    required
                   />
                 </div>
               </div>
@@ -290,6 +294,7 @@ const AddHotel = () => {
                   className="block w-full rounded-md border border-gray-300 px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-primary focus:ring-primary dark:border-gray-700 dark:bg-gray-950 dark:text-gray-50 dark:placeholder-gray-400"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
+                  required
                 />
               </div>
               <div className="grid gap-2">
@@ -310,6 +315,7 @@ const AddHotel = () => {
                       id="image"
                       className="p-2"
                       onChange={handleImageChange}
+                      required
                     />
                   </div>
                 </div>
@@ -350,4 +356,4 @@ function UploadIcon(props) {
     </svg>
   );
 }
-export default AddHotel
+export default AddHotel;

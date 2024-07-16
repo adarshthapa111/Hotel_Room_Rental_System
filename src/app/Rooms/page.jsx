@@ -246,4 +246,4 @@ function StarIcon(props) {
   );
 }
 
-export default Rooms
+export default Rooms;

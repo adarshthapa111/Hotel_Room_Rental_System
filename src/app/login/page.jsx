@@ -175,7 +175,7 @@ const Login = () => {
                   <Image
                     src="/Image/google.png"
                     alt="Google image"
-                    className="h-8 w-8"
+                    wclassName="h-8 w-8"
                     height={80} // Required property
                     width={40} // Required property
                   />
@@ -198,4 +198,4 @@ const Login = () => {
   );
 };
 
-export default Login
+export default Login;
