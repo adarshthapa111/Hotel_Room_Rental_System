@@ -1,317 +1,386 @@
 /**
  * v0 by Vercel.
- * @see https://v0.dev/t/mOxdd4r0oRP
+ * @see https://v0.dev/t/ygM3mnG0nMA
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
-import Image from "next/image";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import {
+  Collapsible,
+  CollapsibleTrigger,
+  CollapsibleContent,
+} from "@/components/ui/collapsible";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@/components/ui/popover";
+import { Select, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function Component() {
   return (
-    <main className="flex flex-col">
-      <section className="relative h-[80vh] w-full overflow-hidden">
-        <Image
-          alt="Hotel Hero"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-          height={1080}
-          src="/placeholder.svg"
-          style={{
-            aspectRatio: "1920/1080",
-            objectFit: "cover",
-          }}
-          width={1920}
-        />
-        <div className="absolute inset-0 bg-black/50 z-10" />
-        <div className="relative z-20 h-full w-full flex flex-col items-center justify-center gap-6 px-4 md:px-6">
-          <h1 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl lg:text-6xl">
-            Discover Your Dream Getaway
-          </h1>
-          <p className="text-lg text-white md:text-xl lg:text-2xl">
-            Find the perfect hotel room for your next vacation.
-          </p>
-          <form className="w-full max-w-xl">
-            <div className="flex rounded-lg bg-white shadow-lg">
-              <Input
-                className="flex-1 rounded-l-lg px-4 py-3 text-sm focus:outline-none"
-                placeholder="Search by location, date, or room type"
-                type="text"
-              />
-              <Button
-                className="rounded-r-lg bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary/80 focus:outline-none"
-                type="submit"
-              >
-                Search
-              </Button>
-            </div>
-          </form>
-        </div>
+    <div className="max-w-6xl p-4 mx-auto lg:px-6 sm:py-8 md:py-10">
+      <section className="flex-col hidden gap-4 pb-4 sm:flex sm:flex-row sm:items-center sm:pb-8">
+        <h1 className="text-xl font-semibold tracking-tight lg:text-3xl">
+          Cozy and Charming Mountain Retreat with Hot Tub
+        </h1>
+        <nav className="flex items-center justify-center gap-1 sm:ml-auto">
+          <Button
+            asChild
+            variant="ghost"
+            size="sm"
+            className="gap-1 underline rounded-md underline-offset-2"
+          >
+            <a href="#">
+              <ShareIcon className="w-4 h-4" />
+              Share
+            </a>
+          </Button>
+          <Button
+            asChild
+            variant="ghost"
+            size="sm"
+            className="gap-1 underline rounded-md underline-offset-2"
+          >
+            <a href="#">
+              <HeartIcon className="w-4 h-4" />
+              Save
+            </a>
+          </Button>
+        </nav>
       </section>
-      <section className="bg-gray-100 py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="flex flex-col items-center gap-4">
-              <WifiIcon className="h-8 w-8 text-primary" />
-              <h3 className="text-lg font-semibold">Free WiFi</h3>
-              <p className="text-gray-500 text-center">
-                Stay connected with high-speed internet access in all rooms.
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <ParkingMeterIcon className="h-8 w-8 text-primary" />
-              <h3 className="text-lg font-semibold">Free Parking</h3>
-              <p className="text-gray-500 text-center">
-                Complimentary parking for all guests.
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <SpadeIcon className="h-8 w-8 text-primary" />
-              <h3 className="text-lg font-semibold">Spa & Wellness</h3>
-              <p className="text-gray-500 text-center">
-                Relax and rejuvenate at our on-site spa.
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-4">
-              <MenuIcon className="h-8 w-8 text-primary" />
-              <h3 className="text-lg font-semibold">Dining Options</h3>
-              <p className="text-gray-500 text-center">
-                Enjoy a variety of dining experiences at our hotel.
-              </p>
-            </div>
-          </div>
+      <section className="relative bg-muted">
+        <div className="grid gap-2 sm:grid-cols-4">
+          <Link
+            href="#"
+            className="relative col-span-2 row-span-2 overflow-hidden transition-all after:opacity-0 after:absolute after:inset-0 after:bg-black hover:after:opacity-20 focus:after:opacity-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-xl sm:rounded-l-xl"
+            prefetch={false}
+          >
+            <img
+              src="/placeholder.svg"
+              width={600}
+              height={600}
+              alt="Living room"
+              className="object-cover aspect-square"
+            />
+          </Link>
+          <Link
+            href="#"
+            className="relative overflow-hidden transition-all after:opacity-0 after:absolute after:inset-0 after:bg-black hover:after:opacity-20 focus:after:opacity-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-tl-xl"
+            prefetch={false}
+          >
+            <img
+              src="/placeholder.svg"
+              width={600}
+              height={600}
+              alt="Living room"
+              className="object-cover aspect-square"
+            />
+          </Link>
+          <Link
+            href="#"
+            className="relative overflow-hidden transition-all after:opacity-0 after:absolute after:inset-0 after:bg-black hover:after:opacity-20 focus:after:opacity-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-tr-xl"
+            prefetch={false}
+          >
+            <img
+              src="/placeholder.svg"
+              width={600}
+              height={600}
+              alt="Fireplace"
+              className="object-cover aspect-square"
+            />
+          </Link>
+          <Link
+            href="#"
+            className="relative overflow-hidden transition-all after:opacity-0 after:absolute after:inset-0 after:bg-black hover:after:opacity-20 focus:after:opacity-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-bl-xl"
+            prefetch={false}
+          >
+            <img
+              src="/placeholder.svg"
+              width={600}
+              height={600}
+              alt="Bathroom"
+              className="object-cover aspect-square"
+            />
+          </Link>
+          <Link
+            href="#"
+            className="relative overflow-hidden transition-all after:opacity-0 after:absolute after:inset-0 after:bg-black hover:after:opacity-20 focus:after:opacity-20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-br-xl"
+            prefetch={false}
+          >
+            <img
+              src="/placeholder.svg"
+              width={600}
+              height={600}
+              alt="Bedroom"
+              className="object-cover aspect-square"
+            />
+          </Link>
         </div>
+        <Button
+          variant="secondary"
+          size="sm"
+          className="absolute gap-1 bottom-4 right-4"
+        >
+          <GripIcon className="w-4 h-4" />
+          Show all photos
+        </Button>
       </section>
-      <section className="py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-              Explore Our Room Types
+      <section className="py-8 grid md:grid-cols-2 lg:grid-cols-[1fr_400px] gap-8 sm:gap-12 md:gap-16 items-start">
+        <div className="grid row-start-2 gap-8 md:row-start-auto">
+          <div className="flex-col hidden gap-1 md:flex">
+            <h2 className="text-2xl font-semibold">
+              Home in Santa Cruz, California, United States
             </h2>
-            <p className="mt-4 text-gray-500 md:text-xl">
-              Find the perfect room for your stay.
+            <p className="text-muted-foreground">
+              2 guests · 1 bedroom · 1 bed · 1 bath · Wifi · Kitchen
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-              <Link className="block" href="#">
-                <Image
-                  alt="Standard Room"
-                  className="h-64 w-full object-cover"
-                  height={400}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "600/400",
-                    objectFit: "cover",
-                  }}
-                  width={600}
-                />
-                <div className="bg-white p-4 dark:bg-gray-950">
-                  <h3 className="text-xl font-bold">Standard Room</h3>
-                  <p className="text-gray-500">
-                    Comfortable and cozy room with a queen-size bed.
-                  </p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-lg font-semibold">$99/night</span>
-                    <button
-                      className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/80 focus:outline-none"
-                      href="#"
-                    >
-                      Book Now
-                    </button>
+          <Card>
+            <CardContent className="relative flex items-center gap-6 p-4 sm:p-6">
+              <AwardIcon className="w-10 h-10" />
+              <div className="flex-1 font-semibold max-w-[16rem] hidden sm:flex md:hidden lg:flex">
+                One of the most loved homes on Airbnb, according to guests.
+              </div>
+              <div className="flex items-center gap-6 ml-auto">
+                <div className="flex flex-col gap-1 text-center">
+                  <div className="text-2xl font-semibold tracking-tighter">
+                    4.93
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <StarIcon className="w-2.5 h-2.5 fill-primary" />
+                    <StarIcon className="w-2.5 h-2.5 fill-primary" />
+                    <StarIcon className="w-2.5 h-2.5 fill-primary" />
+                    <StarIcon className="w-2.5 h-2.5 fill-primary" />
+                    <StarIcon className="w-2.5 h-2.5" />
                   </div>
                 </div>
+                <Separator orientation="vertical" className="h-9" />
+                <div className="flex flex-col gap-0.5 text-center">
+                  <div className="text-2xl font-semibold tracking-tighter">
+                    745
+                  </div>
+                  <div className="text-xs font-semibold underline">Reviews</div>
+                </div>
+              </div>
+              <Link href="#" className="absolute inset-0" prefetch={false}>
+                <span className="sr-only">View reviews</span>
               </Link>
+            </CardContent>
+          </Card>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center w-12 h-12">
+              <Avatar className="w-10 h-10 border">
+                <AvatarImage src="/placeholder-user.jpg" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
             </div>
-            <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-              <Link className="block" href="#">
-                <Image
-                  alt="Deluxe Room"
-                  className="h-64 w-full object-cover"
-                  height={400}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "600/400",
-                    objectFit: "cover",
-                  }}
-                  width={600}
-                />
-                <div className="bg-white p-4 dark:bg-gray-950">
-                  <h3 className="text-xl font-bold">Deluxe Room</h3>
-                  <p className="text-gray-500">
-                    Spacious room with a king-size bed and city view.
-                  </p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-lg font-semibold">$149/night</span>
-                    <Button
-                      className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/80 focus:outline-none"
-                      href="#"
-                    >
-                      Book Now
-                    </Button>
-                  </div>
-                </div>
-              </Link>
-            </div>
-            <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-xl">
-              <Link className="block" href="#">
-                <Image
-                  alt="Suite"
-                  className="h-64 w-full object-cover"
-                  height={400}
-                  src="/placeholder.svg"
-                  style={{
-                    aspectRatio: "600/400",
-                    objectFit: "cover",
-                  }}
-                  width={600}
-                />
-                <div className="bg-white p-4 dark:bg-gray-950">
-                  <h3 className="text-xl font-bold">Suite</h3>
-                  <p className="text-gray-500">
-                    Luxurious suite with a separate living area and balcony.
-                  </p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-lg font-semibold">$249/night</span>
-                    <button
-                      className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/80 focus:outline-none"
-                      href="#"
-                    >
-                      Book Now
-                    </button>
-                  </div>
-                </div>
-              </Link>
+            <div className="grid gap-0.5">
+              <div className="font-semibold">Hosted by Catherine</div>
+              <div className="text-sm text-muted-foreground">
+                Joined in 2010 · Superhost
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="bg-gray-100 py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-              What Our Guests Say
-            </h2>
-            <p className="mt-4 text-gray-500 md:text-xl">
-              Read reviews from our satisfied customers.
+          <Separator />
+          <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center w-12 h-12">
+              <CalendarCheckIcon className="w-7 h-7" />
+            </div>
+            <div className="grid gap-0.5">
+              <div className="font-semibold">
+                Free cancellation for 48 hours
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Get a full refund if you change your mind.
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center w-12 h-12">
+              <MedalIcon className="w-7 h-7" />
+            </div>
+            <div className="grid gap-0.5">
+              <div className="font-semibold">Catherine is a Superhost</div>
+              <div className="text-sm text-muted-foreground">
+                Superhosts are experienced, highly rated hosts.
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center w-12 h-12">
+              <MapPinIcon className="w-7 h-7" />
+            </div>
+            <div className="grid gap-0.5">
+              <div className="font-semibold">Great location</div>
+              <div className="text-sm text-muted-foreground">
+                100% of recent guests gave the location a 5-star rating.
+              </div>
+            </div>
+          </div>
+          <Separator />
+          <div className="prose">
+            <p>
+              Welcome to our serene mountain retreat! Nestled amidst the
+              tranquil beauty of the mountains, this cozy home is your perfect
+              getaway for relaxation and adventure.
             </p>
+            <p>
+              Wake up to breathtaking vistas from every window. Enjoy your
+              morning coffee on the balcony, taking in the serene landscape.
+              This mountain haven is perfect for families, friends, and couples
+              seeking a blend of adventure and relaxation. Book your stay and
+              experience the magic of the mountains!
+            </p>
+            <Collapsible>
+              <CollapsibleTrigger className="font-semibold flex items-center gap-1 [&[data-state=open]>svg]:-rotate-90">
+                Show more
+                <ChevronRightIcon className="w-4 h-4 transition-all translate-y-px" />
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+                <p>
+                  Our home comfortably sleeps up to 6 guests in 3 beautifully
+                  appointed bedrooms, each designed for relaxation and comfort.
+                  Cook up a storm in our modern kitchen, complete with all the
+                  appliances and utensils you need for a home-cooked meal.
+                </p>
+                <p>
+                  Stay connected with high-speed internet and a dedicated
+                  workspace, ideal for those who mix travel with work.
+                </p>
+              </CollapsibleContent>
+            </Collapsible>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-950">
-              <div className="flex items-center gap-4">
-                {/* <Avatar className="border w-12 h-12">
-                  <AvatarImage alt="@username" src="/placeholder-user.jpg" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar> */}
-                <div>
-                  <h4 className="font-semibold">John Doe</h4>
-                  <p className="text-gray-500 text-sm">New York, USA</p>
-                </div>
-              </div>
-              <div className="mt-4">
-                <div className="flex items-center gap-2 text-xs font-semibold">
-                  <div className="flex items-center gap-1">
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                  </div>
-                  <span>1 week ago</span>
-                </div>
-                <p className="mt-4 text-gray-500">
-                  The hotel was amazing! The room was clean and comfortable, and
-                  the staff was incredibly friendly and helpful. I would
-                  definitely stay here again.
-                </p>
-              </div>
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-950">
-              <div className="flex items-center gap-4">
-                {/* <Avatar className="border w-12 h-12">
-                  <AvatarImage alt="@username" src="/placeholder-user.jpg" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar> */}
-                <div>
-                  <h4 className="font-semibold">Jane Smith</h4>
-                  <p className="text-gray-500 text-sm">London, UK</p>
-                </div>
-              </div>
-              <div className="mt-4">
-                <div className="flex items-center gap-2 text-xs font-semibold">
-                  <div className="flex items-center gap-1">
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                  </div>
-                  <span>2 weeks ago</span>
-                </div>
-                <p className="mt-4 text-gray-500">
-                  I had a wonderful stay at this hotel. The amenities were
-                  top-notch, and the staff went above and beyond to make my
-                  experience exceptional.
-                </p>
-              </div>
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-lg dark:bg-gray-950">
-              <div className="flex items-center gap-4">
-                {/* <Avatar className="border w-12 h-12">
-                  <AvatarImage alt="@username" src="/placeholder-user.jpg" />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar> */}
-                <div>
-                  <h4 className="font-semibold">Michael Johnson</h4>
-                  <p className="text-gray-500 text-sm">San Francisco, USA</p>
-                </div>
-              </div>
-              <div className="mt-4">
-                <div className="flex items-center gap-2 text-xs font-semibold">
-                  <div className="flex items-center gap-1">
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                    <StarIcon className="w-3 h-3 fill-primary" />
-                  </div>
-                  <span>3 weeks ago</span>
-                </div>
-                <p className="mt-4 text-gray-500">
-                  I had an amazing stay at this hotel. The location was perfect,
-                  and the room was incredibly comfortable. I would highly
-                  recommend this place to anyone visiting the area.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-primary py-12 md:py-16 lg:py-20">
-        <div className="container mx-auto px-4 md:px-6 text-center text-white">
-          <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">
-            Book Your Stay Today
-          </h2>
-          <p className="mt-4 md:text-xl">
-            Experience the best of our hotel and make your vacation
-            unforgettable.
-          </p>
-          <div className="mt-8">
-            <Button
-              className="rounded-md bg-white px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-gray-200 focus:outline-none"
-              href="#"
-            >
-              Book Now
+          <Separator />
+          <div className="grid gap-8">
+            <h3 className="text-xl font-semibold">What this place offers</h3>
+            <ul className="grid gap-6 lg:grid-cols-2">
+              <li className="flex gap-4">
+                <MountainSnowIcon className="w-6 h-6" />
+                Mountain view
+              </li>
+              <li className="flex gap-4">
+                <WavesIcon className="w-6 h-6" />
+                Beach access
+              </li>
+              <li className="flex gap-4">
+                <ChefHatIcon className="w-6 h-6" />
+                Private chef
+              </li>
+              <li className="flex gap-4">
+                <WifiIcon className="w-6 h-6" />
+                Wifi
+              </li>
+              <li className="flex gap-4">
+                <CarIcon className="w-6 h-6" />
+                Parking
+              </li>
+              <li className="flex gap-4">
+                <CameraIcon className="w-6 h-6" />
+                Security cameras
+              </li>
+              <li className="flex gap-4">
+                <AccessibilityIcon className="w-6 h-6" />
+                Wheelchair accessible
+              </li>
+              <li className="flex gap-4">
+                <WindIcon className="w-6 h-6" />
+                Patio
+              </li>
+            </ul>
+            <Button variant="outline" className="justify-self-start">
+              Show all amenities
             </Button>
           </div>
+          <Separator />
+        </div>
+
+
+
+
+
+
+        
+        <div className="grid row-start-1 gap-4 md:row-start-auto">
+          <div className="flex flex-col gap-1 sm:hidden">
+            <h2 className="font-semibold sm:text-2xl">
+              Home in Santa Cruz, California, United States
+            </h2>
+            <p className="text-sm sm:text-base text-muted-foreground">
+              2 guests · 1 bedroom · 1 bed · 1 bath · Wifi · Kitchen
+            </p>
+          </div>
+          <Card>
+            <CardHeader>
+              <CardTitle>
+                $400{" "}
+                <span className="text-sm font-normal text-muted-foreground">
+                  / night
+                </span>
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-6">
+              <form>
+                <div className="grid gap-2">
+                  <div className="flex gap-2">
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className="flex-col items-start w-full h-auto"
+                        >
+                          <span className="font-semibold uppercase text-[0.65rem]">
+                            Check in
+                          </span>
+                          <span className="font-normal">4/2/2024</span>
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="p-0 max-w-[276px]">
+                        <Calendar />
+                      </PopoverContent>
+                    </Popover>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          className="flex-col items-start w-full h-auto"
+                        >
+                          <span className="font-semibold uppercase text-[0.65rem]">
+                            Check out
+                          </span>
+                          <span className="font-normal">10/2/2024</span>
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent className="p-0 max-w-[276px]">
+                        <Calendar />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+                  <Select>
+                    <SelectTrigger className="h-auto">
+                      <SelectValue
+                        placeholder={
+                          <div className="flex flex-col items-start" />
+                        }
+                      />
+                    </SelectTrigger>
+                  </Select>
+                  <Button className="w-full">Book now</Button>
+                </div>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
 
-function MenuIcon(props) {
+function AccessibilityIcon(props) {
   return (
     <svg
       {...props}
@@ -325,14 +394,16 @@ function MenuIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
+      <circle cx="16" cy="4" r="1" />
+      <path d="m18 19 1-7-6 1" />
+      <path d="m5 8 3-3 5.5 3-2.36 3.5" />
+      <path d="M4.24 14.5a5 5 0 0 0 6.88 6" />
+      <path d="M13.76 17.5a5 5 0 0 0-6.88-6" />
     </svg>
   );
 }
 
-function ParkingMeterIcon(props) {
+function AwardIcon(props) {
   return (
     <svg
       {...props}
@@ -346,16 +417,13 @@ function ParkingMeterIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M9 9a3 3 0 1 1 6 0" />
-      <path d="M12 12v3" />
-      <path d="M11 15h2" />
-      <path d="M19 9a7 7 0 1 0-13.6 2.3C6.4 14.4 8 19 8 19h8s1.6-4.6 2.6-7.7c.3-.8.4-1.5.4-2.3" />
-      <path d="M12 19v3" />
+      <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
+      <circle cx="12" cy="8" r="6" />
     </svg>
   );
 }
 
-function SpadeIcon(props) {
+function CalendarCheckIcon(props) {
   return (
     <svg
       {...props}
@@ -369,8 +437,223 @@ function SpadeIcon(props) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M5 9c-1.5 1.5-3 3.2-3 5.5A5.5 5.5 0 0 0 7.5 20c1.8 0 3-.5 4.5-2 1.5 1.5 2.7 2 4.5 2a5.5 5.5 0 0 0 5.5-5.5c0-2.3-1.5-4-3-5.5l-7-7-7 7Z" />
-      <path d="M12 18v4" />
+      <path d="M8 2v4" />
+      <path d="M16 2v4" />
+      <rect width="18" height="18" x="3" y="4" rx="2" />
+      <path d="M3 10h18" />
+      <path d="m9 16 2 2 4-4" />
+    </svg>
+  );
+}
+
+function CameraIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+      <circle cx="12" cy="13" r="3" />
+    </svg>
+  );
+}
+
+function CarIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+      <circle cx="7" cy="17" r="2" />
+      <path d="M9 17h6" />
+      <circle cx="17" cy="17" r="2" />
+    </svg>
+  );
+}
+
+function ChefHatIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
+      <path d="M6 17h12" />
+    </svg>
+  );
+}
+
+function ChevronRightIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  );
+}
+
+function GripIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="5" r="1" />
+      <circle cx="19" cy="5" r="1" />
+      <circle cx="5" cy="5" r="1" />
+      <circle cx="12" cy="12" r="1" />
+      <circle cx="19" cy="12" r="1" />
+      <circle cx="5" cy="12" r="1" />
+      <circle cx="12" cy="19" r="1" />
+      <circle cx="19" cy="19" r="1" />
+      <circle cx="5" cy="19" r="1" />
+    </svg>
+  );
+}
+
+function HeartIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    </svg>
+  );
+}
+
+function MapPinIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function MedalIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
+      <path d="M11 12 5.12 2.2" />
+      <path d="m13 12 5.88-9.8" />
+      <path d="M8 7h8" />
+      <circle cx="12" cy="17" r="5" />
+      <path d="M12 18v-2h-.5" />
+    </svg>
+  );
+}
+
+function MountainSnowIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+      <path d="M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19" />
+    </svg>
+  );
+}
+
+function ShareIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+      <polyline points="16 6 12 2 8 6" />
+      <line x1="12" x2="12" y1="2" y2="15" />
     </svg>
   );
 }
@@ -394,6 +677,27 @@ function StarIcon(props) {
   );
 }
 
+function WavesIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+      <path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+      <path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
+    </svg>
+  );
+}
+
 function WifiIcon(props) {
   return (
     <svg
@@ -412,6 +716,47 @@ function WifiIcon(props) {
       <path d="M2 8.82a15 15 0 0 1 20 0" />
       <path d="M5 12.859a10 10 0 0 1 14 0" />
       <path d="M8.5 16.429a5 5 0 0 1 7 0" />
+    </svg>
+  );
+}
+
+function WindIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" />
+      <path d="M9.6 4.6A2 2 0 1 1 11 8H2" />
+      <path d="M12.6 19.4A2 2 0 1 0 14 16H2" />
+    </svg>
+  );
+}
+
+function XIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
     </svg>
   );
 }

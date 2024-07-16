@@ -374,47 +374,315 @@ const RoomDesc = () => {
       </div>
       <section className="py-12 md:py-16 lg:py-20">
         <div className="container mx-auto max-w-7xl px-6">
-          <h2 className="mb-8 text-3xl font-bold md:text-4xl font-playfair">Amenities</h2>
+          <h2 className="mb-8 text-3xl font-bold md:text-4xl font-playfair">
+            Amenities
+          </h2>
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
             <div className="flex items-center gap-3">
-              <Image src="/Image/wifi.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <Image
+                src="/Image/wifi.png"
+                height={40}
+                width={40}
+                className="h-6 w-6 text-primary"
+              />
               <span>Wifi</span>
             </div>
             <div className="flex items-center gap-3">
-              <Image src="/Image/cooking.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <Image
+                src="/Image/cooking.png"
+                height={40}
+                width={40}
+                className="h-6 w-6 text-primary"
+              />
               <span>Kitchen</span>
             </div>
             <div className="flex items-center gap-3">
-              <Image src="/Image/fireplace.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <Image
+                src="/Image/fireplace.png"
+                height={40}
+                width={40}
+                className="h-6 w-6 text-primary"
+              />
               <span>Fireplace</span>
             </div>
             <div className="flex items-center gap-3">
-              <Image src="/Image/parking.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <Image
+                src="/Image/parking.png"
+                height={40}
+                width={40}
+                className="h-6 w-6 text-primary"
+              />
               <span>Parking</span>
             </div>
             <div className="flex items-center gap-3">
-              <Image src="/Image/bath.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <Image
+                src="/Image/bath.png"
+                height={40}
+                width={40}
+                className="h-6 w-6 text-primary"
+              />
               <span>Hot Tub</span>
             </div>
             <div className="flex items-center gap-3">
-              <Image src="/Image/mountain.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <Image
+                src="/Image/mountain.png"
+                height={40}
+                width={40}
+                className="h-6 w-6 text-primary"
+              />
               <span>Mountain View</span>
             </div>
             <div className="flex items-center gap-3">
-              <Image src="/Image/balcony.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <Image
+                src="/Image/balcony.png"
+                height={40}
+                width={40}
+                className="h-6 w-6 text-primary"
+              />
               <span>Balcony</span>
             </div>
             <div className="flex items-center gap-3">
-              <Image src="/Image/washer.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <Image
+                src="/Image/washer.png"
+                height={40}
+                width={40}
+                className="h-6 w-6 text-primary"
+              />
               <span>Washer/Dryer</span>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="max-w-7xl mx-auto grid md:grid-cols-2">
+        <div className="grid md:row-start-auto gap-8">
+          <div className="flex flex-col gap-1 md:hidden">
+            <h2 className="text-2xl font-semibold">
+              Home in Santa Cruz, California, United States
+            </h2>
+            <p className="text-gray-500">
+              2 guests · 1 bedroom · 1 bed · 1 bath · Wifi · Kitchen
+            </p>
+          </div>
+          <div className="border border-gray-300 rounded-lg p-4 sm:p-6 relative flex items-center gap-6">
+            <AwardIcon className="w-10 h-10" />
+            <div className="flex-1 font-semibold max-w-[16rem] hidden sm:flex lg:hidden">
+              One of the most loved homes on Airbnb, according to guests.
+            </div>
+            <div className="flex items-center gap-6 ml-auto">
+              <div className="flex flex-col gap-1 text-center">
+                <div className="text-2xl font-semibold tracking-tighter">
+                  4.93
+                </div>
+                <div className="flex items-center gap-1">
+                  <StarIcon className="w-2.5 h-2.5 fill-current text-primary" />
+                  <StarIcon className="w-2.5 h-2.5 fill-current text-primary" />
+                  <StarIcon className="w-2.5 h-2.5 fill-current text-primary" />
+                  <StarIcon className="w-2.5 h-2.5 fill-current text-primary" />
+                  <StarIcon className="w-2.5 h-2.5" />
+                </div>
+              </div>
+              <hr className="h-9" />
+              <div className="flex flex-col gap-0.5 text-center">
+                <div className="text-2xl font-semibold tracking-tighter">
+                  745
+                </div>
+                <div className="text-xs font-semibold underline">Reviews</div>
+              </div>
+            </div>
+            <Link href="#" className="absolute inset-0" prefetch={false}>
+              <span className="sr-only">View reviews</span>
+            </Link>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center w-12 h-12">
+              <div className="w-10 h-10 border rounded-full overflow-hidden">
+                <img
+                  src="/placeholder-user.jpg"
+                  alt="Host Avatar"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="grid gap-0.5">
+              <div className="font-semibold">Hosted by Catherine</div>
+              <div className="text-xs text-gray-500">
+                Joined in 2010 · Superhost
+              </div>
+            </div>
+          </div>
+          <hr className="border-t border-gray-300 my-6" />
+          <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center w-12 h-12">
+              <CalendarCheckIcon className="w-7 h-7" />
+            </div>
+            <div className="grid gap-0.5">
+              <div className="font-semibold">
+                Free cancellation for 48 hours
+              </div>
+              <div className="text-xs text-gray-500">
+                Get a full refund if you change your mind.
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center w-12 h-12">
+              <MedalIcon className="w-7 h-7" />
+            </div>
+            <div className="grid gap-0.5">
+              <div className="font-semibold">Catherine is a Superhost</div>
+              <div className="text-xs text-gray-500">
+                Superhosts are experienced, highly rated hosts.
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-6">
+            <div className="flex items-center justify-center w-12 h-12">
+              <MapPinIcon className="w-7 h-7" />
+            </div>
+            <div className="grid gap-0.5">
+              <div className="font-semibold">Great location</div>
+              <div className="text-xs text-gray-500">
+                100% of recent guests gave the location a 5-star rating.
+              </div>
+            </div>
+          </div>
+          <hr className="border-t border-gray-300 my-6" />
+          <div className="prose">
+            <p>
+              Welcome to our serene mountain retreat! Nestled amidst the
+              tranquil beauty of the mountains, this cozy home is your perfect
+              getaway for relaxation and adventure.
+            </p>
+            <p>
+              Wake up to breathtaking vistas from every window. Enjoy your
+              morning coffee on the balcony, taking in the serene landscape.
+              This mountain haven is perfect for families, friends, and couples
+              seeking a blend of adventure and relaxation. Book your stay and
+              experience the magic of the mountains!
+            </p>
+            <div className="relative">
+              <button
+                type="button"
+                className="font-semibold flex items-center gap-1 absolute bottom-0 left-0 transform transition-transform"
+                style={{ marginBottom: "-1.5rem" }}
+              >
+                Show more
+                <ChevronRightIcon className="w-4 h-4 transition-transform" />
+              </button>
+            </div>
+          </div>
+          <hr className="border-t border-gray-300 my-8" />
         </div>
       </section>
       <RatingAndReview hotelId={hotelId} />
     </>
   );
 };
+
+function CalendarCheckIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M8 2v4" />
+      <path d="M16 2v4" />
+      <rect width="18" height="18" x="3" y="4" rx="2" />
+      <path d="M3 10h18" />
+      <path d="m9 16 2 2 4-4" />
+    </svg>
+  );
+}
+function MedalIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15" />
+      <path d="M11 12 5.12 2.2" />
+      <path d="m13 12 5.88-9.8" />
+      <path d="M8 7h8" />
+      <circle cx="12" cy="17" r="5" />
+      <path d="M12 18v-2h-.5" />
+    </svg>
+  );
+}
+
+function ChevronRightIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  );
+}
+
+function MapPinIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function AwardIcon(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
+      <circle cx="12" cy="8" r="6" />
+    </svg>
+  );
+}
 
 function StarIcon({ className, ...props }) {
   return (
