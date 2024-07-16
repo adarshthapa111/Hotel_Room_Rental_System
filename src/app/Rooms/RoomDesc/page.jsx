@@ -370,7 +370,7 @@ const RoomDesc = () => {
                     Reserve
                   </button>
                   <div className="text-sm text-center text-gray-500">
-                    You won't be charged yet
+                    You won&apos;t be charged yet
                   </div>
                 </div>
               </form>
