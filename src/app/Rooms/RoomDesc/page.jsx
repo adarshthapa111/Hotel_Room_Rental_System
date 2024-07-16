@@ -223,13 +223,7 @@ const RoomDesc = () => {
           Show all photos
         </button>
       </section>
-      <div
-        className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid gap-6">
           <div>
             <h1 className="text-3xl font-bold">{hotelName}</h1>
@@ -378,6 +372,45 @@ const RoomDesc = () => {
           </div>
         </div>
       </div>
+      <section className="py-12 md:py-16 lg:py-20">
+        <div className="container mx-auto max-w-7xl px-6">
+          <h2 className="mb-8 text-3xl font-bold md:text-4xl font-playfair">Amenities</h2>
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+            <div className="flex items-center gap-3">
+              <Image src="/Image/wifi.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <span>Wifi</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image src="/Image/cooking.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <span>Kitchen</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image src="/Image/fireplace.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <span>Fireplace</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image src="/Image/parking.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <span>Parking</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image src="/Image/bath.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <span>Hot Tub</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image src="/Image/mountain.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <span>Mountain View</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image src="/Image/balcony.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <span>Balcony</span>
+            </div>
+            <div className="flex items-center gap-3">
+              <Image src="/Image/washer.png" height={40} width={40} className="h-6 w-6 text-primary" />
+              <span>Washer/Dryer</span>
+            </div>
+          </div>
+        </div>
+      </section>
       <RatingAndReview hotelId={hotelId} />
     </>
   );
