@@ -218,7 +218,7 @@ const RoomDesc = () => {
             />
           </Link>
         </div>
-        <button className="absolute gap-1 bottom-4 right-4 flex items-center bg-gray-100 p-2 rounded-md shadow-lg">
+        <button className="absolute gap-1 bottom-6 right-6 flex items-center bg-gray-100 p-2 rounded-md shadow-sm">
           <GripIcon className="w-4 h-4" />
           Show all photos
         </button>
@@ -231,12 +231,6 @@ const RoomDesc = () => {
               {description}
             </p>
             <div className="grid sm:grid-cols-3 gap-4 pt-4">
-              <div>
-                <div className="text-gray-500 dark:text-gray-600 text-md font-medium">
-                  Price
-                </div>
-                <div className="text-2xl font-bold">Rs.{price}/night</div>
-              </div>
               <div>
                 <div className="text-gray-500 dark:text-gray-400 text-md font-medium">
                   Rooms
@@ -273,22 +267,6 @@ const RoomDesc = () => {
                 </div>
                 <div className="text-2xl capitalize font-bold">{parking}</div>
               </div>
-              <div>
-                <div className="text-gray-500 dark:text-gray-400 text-md font-medium">
-                  Check In Date
-                </div>
-                <div className="text-2xl capitalize font-bold">
-                  {checkInDate}
-                </div>
-              </div>
-              <div>
-                <div className="text-gray-500 dark:text-gray-400 text-md font-medium">
-                  Check Out Date
-                </div>
-                <div className="text-2xl capitalize font-bold">
-                  {checkOutDate}
-                </div>
-              </div>
             </div>
             <div className="mt-4 space-y-2 md:flex space-x-2">
               <button
@@ -306,7 +284,7 @@ const RoomDesc = () => {
           <div className="border border-gray-300 rounded-lg p-6">
             <div className="mb-4">
               <h2 className="text-2xl font-bold">
-                $400{" "}
+                Rs.{price}{" "}
                 <span className="text-sm font-normal text-gray-500">
                   / night
                 </span>
@@ -325,7 +303,7 @@ const RoomDesc = () => {
                       selectsStart
                       startDate={checkInDate}
                       endDate={checkOutDate}
-                      className="w-full border border-gray-300 rounded-lg p-2"
+                      className="w-full border border-gray-300 rounded-lg p-3"
                     />
                   </div>
                   <div className="grid gap-2">
@@ -339,7 +317,7 @@ const RoomDesc = () => {
                       startDate={checkInDate}
                       endDate={checkOutDate}
                       minDate={checkInDate}
-                      className="w-full border border-gray-300 rounded-lg p-2"
+                      className="w-full border border-gray-300 rounded-lg p-3"
                     />
                   </div>
                   <div className="grid gap-2">
@@ -349,7 +327,7 @@ const RoomDesc = () => {
                     <select
                       value={guests}
                       onChange={(e) => setGuests(e.target.value)}
-                      className="w-full border border-gray-300 rounded-lg p-2"
+                      className="w-full border border-gray-300 rounded-lg p-3"
                     >
                       <option value="1">1 adult</option>
                       <option value="2">2 adults</option>
