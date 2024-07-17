@@ -6,16 +6,19 @@ import { supabase } from "../Supabase/config";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Searchbar from "../components/Searchbar";
+import Loader from "../components/Loader";  // Make sure you have the Loader component imported
 
 const Rooms = () => {
   const [fetchError, setFetchError] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [ratingsData, setRatingsData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);  // Add loading state
   const itemsPerPage = 6;
 
   useEffect(() => {
     const fetchBookings = async () => {
+      setLoading(true);  // Start loading
       try {
         const { data: bookingsData, error: bookingsError } = await supabase
           .from("BookingForm")
@@ -24,15 +27,15 @@ const Rooms = () => {
         if (bookingsError) {
           setFetchError("Couldn't fetch the data!");
           setBookings([]);
-          return;
+        } else {
+          setBookings(bookingsData);
+          setFetchError(null);
         }
-
-        setBookings(bookingsData);
-        setFetchError(null);
       } catch (err) {
         console.error("Error fetching data:", err.message);
         setFetchError("Unexpected error occurred");
       }
+      setLoading(false);  // End loading
     };
 
     const fetchRatings = async () => {
@@ -101,7 +104,9 @@ const Rooms = () => {
             Find the perfect room for your stay.
           </p>
         </div>
-        {bookings.length > 0 ? (
+        {loading ? (  // Show loader while loading
+          <Loader />
+        ) : bookings.length > 0 ? (
           <div className="container mx-auto px-4 md:px-6 ">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
               {currentItems.map((booking) => {
