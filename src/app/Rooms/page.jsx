@@ -5,6 +5,7 @@ import Link from "next/link";
 import { supabase } from "../Supabase/config";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Searchbar from "../components/Searchbar";
 
 const Rooms = () => {
   const [fetchError, setFetchError] = useState(null);
@@ -94,16 +95,14 @@ const Rooms = () => {
         exit={{ opacity: 0, x: -20 }}
         transition={{ duration: 0.8 }}
       >
+        <div className="mb-8 text-center">
+          <Searchbar />
+          <p className="mt-4 text-gray-500 md:text-xl">
+            Find the perfect room for your stay.
+          </p>
+        </div>
         {bookings.length > 0 ? (
           <div className="container mx-auto px-4 md:px-6 ">
-            <div className="mb-8 text-center">
-              <h2 className="font-great-vibes tracking-wide text-3xl font-bold sm:text-4xl md:text-5xl ">
-                Explore Our Room Types
-              </h2>
-              <p className="mt-4 text-gray-500 md:text-xl">
-                Find the perfect room for your stay.
-              </p>
-            </div>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
               {currentItems.map((booking) => {
                 const ratings = ratingsData[booking.id] || [];
