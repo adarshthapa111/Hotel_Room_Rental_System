@@ -31,14 +31,14 @@ const Home = () => {
                 </h1>
                 <div className="p-2 space-x-9">
                   <motion.button
-                    className="bg-gradient-to-r from-blue-600 to-blue-600 py-4 px-6 text-white font-semibold rounded-lg shadow-inner shadow-white"
+                    className="border border-gray-50 bg-gradient-to-r from-blue-600 to-blue-600 py-4 px-6 text-white font-semibold rounded-lg shadow-lg shadow-gray-400"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     Book a room ➙
                   </motion.button>
                   <motion.button
-                    className="bg-gradient-to-r from-purple-600 to-blue-400 py-4 px-6 text-white font-semibold rounded-lg shadow-inner shadow-white"
+                    className="bg-gradient-to-r from-purple-600 to-blue-500 py-4 px-6 text-white font-semibold rounded-lg shadow-lg shadow-gray-400 border-2 border-gray-50"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >

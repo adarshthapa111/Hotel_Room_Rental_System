@@ -24,7 +24,7 @@ export default function Component() {
               id="destination"
               type="text"
               placeholder="Where are you going?"
-              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500"
+              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500  border-gray-400"
             />
           </div>
           <div className="flex flex-col gap-2 flex-1">
@@ -38,7 +38,7 @@ export default function Component() {
               selected={checkInDate}
               onChange={(date) => setCheckInDate(date)}
               placeholderText="Select date"
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md  border-gray-400"
             />
           </div>
           <div className="flex flex-col gap-2 flex-1">
@@ -52,7 +52,7 @@ export default function Component() {
               selected={checkOutDate}
               onChange={(date) => setCheckOutDate(date)}
               placeholderText="Select date"
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md border-gray-400"
             />
           </div>
           <div className="flex flex-col gap-2 flex-1">
@@ -64,7 +64,7 @@ export default function Component() {
             </label>
             <select
               id="guests"
-              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500"
+              className="w-full p-2 border rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500  border-gray-400"
               style={{
                 paddingRight: "2.5rem", // Adjust padding to accommodate the custom arrow
                 boxSizing: "border-box",
@@ -85,7 +85,7 @@ export default function Component() {
           <div className="flex items-end flex-1">
             <button
               type="submit"
-              className="w-full p-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-md hover:bg-blue-600"
+              className="w-full p-2.5 font-medium font-playfair tracking-wider bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-md hover:bg-blue-600 shadow-md shadow-gray-400 border-2 border-gray-50"
             >
               Search
             </button>
