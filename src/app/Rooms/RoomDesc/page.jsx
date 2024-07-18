@@ -218,10 +218,12 @@ const RoomDesc = () => {
             />
           </Link>
         </div>
-        <button className="absolute gap-1 bottom-6 right-6 flex items-center bg-gray-100 p-2 rounded-md shadow-sm">
-          <GripIcon className="w-4 h-4" />
-          Show all photos
-        </button>
+        <Link href="/ImageGallery">
+          <button className="absolute gap-1 bottom-6 right-6 flex items-center bg-gray-100 p-2 rounded-md shadow-sm">
+            <GripIcon className="w-4 h-4" />
+            Show all photos
+          </button>
+        </Link>
       </section>
       <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid gap-6">
@@ -328,11 +330,6 @@ const RoomDesc = () => {
                       value={guests}
                       onChange={(e) => setGuests(e.target.value)}
                       className="w-full border border-gray-300 rounded-lg p-3"
-                      // style={{
-                      //   WebkitAppearance: "none",
-                      //   appearance: "none",
-                      //   boxSizing: "border-box",
-                      // }}
                       style={{
                         paddingRight: "2.5rem", // Adjust padding to accommodate the custom arrow
                         boxSizing: "border-box",
