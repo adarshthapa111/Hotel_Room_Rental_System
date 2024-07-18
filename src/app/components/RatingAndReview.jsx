@@ -36,7 +36,7 @@ const RatingAndReview = ({ hotelId }) => {
         if (data) {
           setReviews(data);
           setFetchError(null);
-          console.log(data);
+          // console.log(data);
         }
       } catch {
         console.log("Error fetching data!!");
@@ -44,7 +44,7 @@ const RatingAndReview = ({ hotelId }) => {
       }
     };
     fetchData();
-  }, );
+  });
 
   //On Submit data..
   const handleSubmit = async (event) => {
@@ -350,9 +350,6 @@ const RatingAndReview = ({ hotelId }) => {
                           <div className="flex items-center gap-2">
                             <div className="font-medium capitalize">
                               {review.FirstName + " " + review.LastName}
-                              {console.log(
-                                review.FirstName + " " + review.LastName
-                              )}
                             </div>
                             <div>
                               <StarRating rating={review.Rating} />

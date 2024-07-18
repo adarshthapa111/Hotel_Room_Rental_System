@@ -8,7 +8,9 @@ export default function Component() {
 
   return (
     <>
-      <h1 className="text-xl font-semibold font-playfair md:text-3xl lg:text-5xl">Explore the world with us</h1>
+      <h1 className="text-xl font-semibold font-playfair md:text-3xl lg:text-5xl">
+        Explore the world with us
+      </h1>
       <div className="bg-white shadow-lg rounded-lg border p-6  max-w-5xl mx-auto my-8">
         <form className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-2 flex-1">
@@ -63,6 +65,15 @@ export default function Component() {
             <select
               id="guests"
               className="w-full p-2 border rounded-md focus:ring focus:ring-blue-500 focus:border-blue-500"
+              style={{
+                paddingRight: "2.5rem", // Adjust padding to accommodate the custom arrow
+                boxSizing: "border-box",
+                background: `url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"%3E%3Cpath d="M7 10l5 5 5-5z"%3E%3C/path%3E%3C/svg%3E') no-repeat right 0.75rem center`,
+                backgroundSize: "1rem",
+                WebkitAppearance: "none",
+                appearance: "none",
+                boxSizing: "border-box",
+              }}
             >
               <option value="1">1 guest</option>
               <option value="2">2 guests</option>

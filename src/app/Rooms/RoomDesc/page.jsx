@@ -328,6 +328,20 @@ const RoomDesc = () => {
                       value={guests}
                       onChange={(e) => setGuests(e.target.value)}
                       className="w-full border border-gray-300 rounded-lg p-3"
+                      // style={{
+                      //   WebkitAppearance: "none",
+                      //   appearance: "none",
+                      //   boxSizing: "border-box",
+                      // }}
+                      style={{
+                        paddingRight: "2.5rem", // Adjust padding to accommodate the custom arrow
+                        boxSizing: "border-box",
+                        background: `url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"%3E%3Cpath d="M7 10l5 5 5-5z"%3E%3C/path%3E%3C/svg%3E') no-repeat right 0.75rem center`,
+                        backgroundSize: "1rem",
+                        WebkitAppearance: "none",
+                        appearance: "none",
+                        boxSizing: "border-box",
+                      }}
                     >
                       <option value="1">1 adult</option>
                       <option value="2">2 adults</option>
