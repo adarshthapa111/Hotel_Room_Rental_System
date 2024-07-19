@@ -14,6 +14,7 @@ const Rooms = () => {
   const [ratingsData, setRatingsData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
   const [loading, setLoading] = useState(true);  // Add loading state
+  const [showBookingForm, setShowBookingForm] = useState(false);
   const itemsPerPage = 6;
 
   useEffect(() => {
@@ -85,6 +86,10 @@ const Rooms = () => {
     );
     window.scrollTo(0, 0);
   };
+
+  const handleBookNow = () =>{
+    setShowBookingForm(true);
+  }
 
   const startPage = (currentPage - 1) * itemsPerPage;
   const currentItems = bookings.slice(startPage, startPage + itemsPerPage);
@@ -170,12 +175,9 @@ const Rooms = () => {
                           <span className="text-lg font-semibold">
                             Rs.{booking.Price}/night
                           </span>
-                          <button
-                            className="rounded-md bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/80 focus:outline-none"
-                            href="#"
-                          >
-                            Book Now
-                          </button>
+                          <div>
+                            <Image src="/Image/love.png" className="h-7 w-7" height={40} width={40}/>
+                          </div>
                         </div>
                         <div className="border-b border-gray-400 dark:border-gray-700 my-4" />
                         <div className="flex items-center justify-between">

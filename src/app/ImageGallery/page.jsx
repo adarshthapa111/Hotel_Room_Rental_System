@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ImageGallery() {
   return (
-    <div className="w-full max-w-6xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         <div className="relative group">
           <Link href="#" className="block" prefetch={false}>

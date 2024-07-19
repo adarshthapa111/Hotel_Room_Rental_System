@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Image from "next/image";
 
 export default function Component() {
   const [checkInDate, setCheckInDate] = useState(null);
@@ -85,8 +86,9 @@ export default function Component() {
           <div className="flex items-end flex-1">
             <button
               type="submit"
-              className="w-full p-2.5 font-medium font-playfair tracking-wider bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-md hover:bg-blue-600 shadow-md shadow-gray-400 border-2 border-gray-50"
+              className="flex items-center justify-center w-full p-2.5 font-medium font-playfair tracking-wider bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-md hover:bg-blue-600 shadow-md shadow-gray-400 border-2 border-gray-50"
             >
+              <Image src="/Image/search_img.png" className="h-5 w-5 mr-4" height={40} width={40}/>
               Search
             </button>
           </div>

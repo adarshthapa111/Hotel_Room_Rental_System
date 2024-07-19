@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState, Suspense, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { supabase } from "../../Supabase/config";
@@ -30,6 +30,28 @@ const RoomDesc = () => {
   const [guests, setGuests] = useState(1);
 
   const { user: currentUser } = UserAuth();
+
+  const formRef = useRef(null);
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsSticky(entry.intersectionRatio < 1);
+      },
+      { threshold: [1] }
+    );
+
+    if (formRef.current) {
+      observer.observe(formRef.current);
+    }
+
+    return () => {
+      if (formRef.current) {
+        observer.unobserve(formRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (params) {
@@ -282,7 +304,7 @@ const RoomDesc = () => {
         </div>
 
         {/* Form  */}
-        <div className="grid gap-6 p-4 sm:p-6 lg:p-8">
+        <div className="grid gap-6 p-4 sm:p-6 lg:p-8 top-0 sticky">
           <div className="border border-gray-300 rounded-lg p-6">
             <div className="mb-4">
               <h2 className="text-2xl font-bold">
@@ -346,12 +368,14 @@ const RoomDesc = () => {
                       <option value="4">Other</option>
                     </select>
                   </div>
-                  <button
-                    type="submit"
-                    className="w-full h-12 bg-gray-800 text-white font-bold rounded-lg"
-                  >
-                    Reserve
-                  </button>
+                  <Link href="/Reserve">
+                    <button
+                      type="submit"
+                      className="w-full h-12 bg-gray-800 text-white font-bold rounded-lg"
+                    >
+                      Reserve
+                    </button>
+                  </Link>
                   <div className="text-sm text-center text-gray-500">
                     You won&apos;t be charged yet
                   </div>
