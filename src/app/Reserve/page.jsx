@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function Component() {
+export default function Reserve() {
   const [selectedPayment, setSelectedPayment] = useState('card');
   const [cardNumber, setCardNumber] = useState('');
   const [expiryMonth, setExpiryMonth] = useState('');
