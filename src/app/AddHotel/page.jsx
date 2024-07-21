@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { supabase } from "../Supabase/config";
 import { motion } from "framer-motion";
 import { UserAuth } from "../context/AuthContext";
+import cloudinary from "../cloudinaryConfig";
 
 const AddHotel = () => {
   const [hotelName, setHotelName] = useState("");
@@ -32,19 +33,14 @@ const AddHotel = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      let imageUrl = null;
-      if (image) {
-        const { data: storageData, error: storageError } =
-          await supabase.storage
-            .from("images")
-            .upload(`public/${Date.now()}_${image.name}`, image);
+      const file = e.target.files[0];
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "Image_preset");
 
-        if (storageError) {
-          throw storageError;
-        }
-
-        imageUrl = `https://rhsstlvilixunvtghzca.supabase.co/storage/v1/object/public/images/${storageData.path}`;
-      }
+      cloudinary.uploader.upload(file, (result) => {
+        setImage(result.secure_url);
+      });
 
       const { data, error } = await supabase.from("BookingForm").insert([
         {
